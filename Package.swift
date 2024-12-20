@@ -4,8 +4,6 @@
 import PackageDescription
 //import CompilerPluginSupport
 
-print(CommandLine.arguments)
-
 var x86Settings:[SwiftSetting]
 var armSettings:[SwiftSetting]
 var riscv64Settings:[SwiftSetting]

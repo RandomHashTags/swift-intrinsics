@@ -11,7 +11,7 @@
 public extension SIMD2 where Scalar == Int64 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -21,14 +21,14 @@ public extension SIMD2 where Scalar == Int64 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -37,14 +37,14 @@ public extension SIMD2 where Scalar == Int64 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
 public extension SIMD2 where Scalar == UInt64 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -54,14 +54,14 @@ public extension SIMD2 where Scalar == UInt64 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -70,7 +70,7 @@ public extension SIMD2 where Scalar == UInt64 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
@@ -78,7 +78,7 @@ public extension SIMD2 where Scalar == UInt64 {
 public extension SIMD4 where Scalar == Int32 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -88,14 +88,14 @@ public extension SIMD4 where Scalar == Int32 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -104,14 +104,14 @@ public extension SIMD4 where Scalar == Int32 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
 public extension SIMD4 where Scalar == UInt32 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -121,14 +121,14 @@ public extension SIMD4 where Scalar == UInt32 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -137,7 +137,7 @@ public extension SIMD4 where Scalar == UInt32 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
@@ -145,7 +145,7 @@ public extension SIMD4 where Scalar == UInt32 {
 public extension SIMD8 where Scalar == Int16 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -155,14 +155,14 @@ public extension SIMD8 where Scalar == Int16 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -171,14 +171,14 @@ public extension SIMD8 where Scalar == Int16 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
 public extension SIMD8 where Scalar == UInt16 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -188,14 +188,14 @@ public extension SIMD8 where Scalar == UInt16 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -204,7 +204,7 @@ public extension SIMD8 where Scalar == UInt16 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
@@ -212,7 +212,7 @@ public extension SIMD8 where Scalar == UInt16 {
 public extension SIMD16 where Scalar == Int8 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -222,14 +222,14 @@ public extension SIMD16 where Scalar == Int8 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -238,14 +238,14 @@ public extension SIMD16 where Scalar == Int8 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
 public extension SIMD16 where Scalar == UInt8 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func << (left: Self, bits: Int) -> Self {
+    static func << <T: BinaryInteger>(left: Self, bits: T) -> Self {
         return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int <<= bits
@@ -255,14 +255,14 @@ public extension SIMD16 where Scalar == UInt8 {
     
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
-    static func <<= (left: inout Self, bits: Int) {
+    static func <<= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left << bits
     }
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >> (left: Self, bits: Int) -> Self {
-        return withUnsafePointer(to: self, {
+    static func >> <T: BinaryInteger>(left: Self, bits: T) -> Self {
+        return withUnsafePointer(to: left, {
             var int:UInt128 = $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })
             int >>= bits
             return withUnsafePointer(to: &int, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -271,7 +271,7 @@ public extension SIMD16 where Scalar == UInt8 {
 
     /// Shift right by a number of bits while shifting in zeros.
     @inlinable
-    static func >>= (left: inout Self, bits: Int) {
+    static func >>= <T: BinaryInteger>(left: inout Self, bits: T) {
         left = left >> bits
     }
 }
