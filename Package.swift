@@ -50,9 +50,19 @@ let package = Package(
     products: [
         .library(
             name: "SwiftIntrinsics",
-            targets: ["SwiftIntrinsics"]),
+            targets: ["SwiftIntrinsics"]
+        ),
+        .plugin(
+            name: "SwiftIntrinsicsPlugin",
+            targets: ["SwiftIntrinsicsPlugin"]
+        )
     ],
     targets: [
+        .plugin(
+            name: "SwiftIntrinsicsPlugin",
+            capability: .buildTool()
+        ),
+        
         .target(
             name: "SwiftIntrinsics",
             path: "Sources/swift-intrinsics"
