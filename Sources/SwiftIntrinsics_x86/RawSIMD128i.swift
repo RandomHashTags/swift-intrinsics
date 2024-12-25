@@ -5,7 +5,9 @@
 //  Created by Evan Anderson on 12/17/24.
 //
 
-#if arch(x86_64) && canImport(_Builtin_intrinsics.intel)
+#if canImport(_Builtin_intrinsics.intel)
+
+@_exported import _Builtin_intrinsics.intel
 
 // MARK: Carry-less Multiplication
 /*
@@ -19,7 +21,7 @@ public extension SIMD2 where Scalar == Int64 { // TODO: INSTRUCTION DOESN'T EXIS
 public extension SIMD2 where Scalar == Int64 { // TODO: MISSING INSTRUCTIONS! WTF!
 }
 
-#if SM3
+#if SM3 && AVX
 // MARK: SM3
 public extension SIMD2 where Scalar == Int64 {
     /// Perform calculation for the next four SM3 message words
@@ -43,7 +45,7 @@ public extension SIMD2 where Scalar == Int64 {
 
 #endif
 
-#if SM4
+#if SM4 && AVX
 // MARK: SM4
 public extension SIMD2 where Scalar == Int64 {
     /// Perform four rounds of SM4 key expansion (operates on independent 128-bit lanes)

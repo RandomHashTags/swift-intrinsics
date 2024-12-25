@@ -5,7 +5,9 @@
 //  Created by Evan Anderson on 12/19/24.
 //
 
-#if arch(x86_64) && canImport(_Builtin_intrinsics.intel) && AVX2
+#if canImport(_Builtin_intrinsics.intel.avx2) && AVX2
+
+@_exported import _Builtin_intrinsics.intel.avx2
 
 // MARK: Broadcast
 public extension SIMD2 where Scalar == Int64 {

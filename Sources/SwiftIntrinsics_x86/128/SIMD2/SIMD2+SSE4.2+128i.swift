@@ -5,7 +5,9 @@
 //  Created by Evan Anderson on 12/19/24.
 //
 
-#if arch(x86_64) && canImport(_Builtin_intrinsics.intel) && SSE4_2
+#if canImport(_Builtin_intrinsics.intel.sse4_2) && SSE4_2
+
+@_exported import _Builtin_intrinsics.intel.sse4_2
 
 // MARK: String Compare
 public extension SIMD2 where Scalar == Int64 {

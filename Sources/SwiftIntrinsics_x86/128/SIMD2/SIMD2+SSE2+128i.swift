@@ -5,7 +5,9 @@
 //  Created by Evan Anderson on 12/19/24.
 //
 
-#if arch(x86_64) && canImport(_Builtin_intrinsics.intel) && SSE2
+#if canImport(_Builtin_intrinsics.intel.sse2) && SSE2
+
+@_exported import _Builtin_intrinsics.intel.sse2
 
 // MARK: Addition
 public extension SIMD2 where Scalar == Int64 {
@@ -136,33 +138,6 @@ public extension SIMD2 where Scalar == Int64 {
     }*/
 }
 
-// MARK: Shuffle
-public extension SIMD2 where Scalar == Int64 {
-    /// Shuffle 8-bit integers using the corresponding index.
-    @inlinable
-    mutating func shuffle8(index: Self) {
-        self = _mm_permutexvar_epi8(self, index)
-    }
-
-    /// Shuffle 8-bit integers using the control.
-    /*@inlinable
-    mutating func shuffle8(imm8: Int32) { // TODO: INSTRUCTION DOESN'T EXIST! WTF!
-        self = _mm_shuffle_epi8(self, imm8)
-    }*/
-    
-    /// Shuffle packed 8-bit integers according to shuffle control mask.
-    @inlinable
-    mutating func shuffle8(mask: Self) {
-        self = _mm_shuffle_epi8(self, mask)
-    }
-
-    /// Shuffle 8-bit integers using the corresponding selector and index.
-    @inlinable
-    mutating func shuffle8(index: Self, b: Self) {
-        self = _mm_permutex2var_epi8(self, index, b)
-    }
-}
-
 // MARK: Subtraction
 public extension SIMD2 where Scalar == Int64 {
     /// Subtract packed 8-bit integers.
@@ -270,7 +245,7 @@ public extension SIMD2 where Scalar == Int64 {
     /// Unpack and interleave 64-bit integers from the low half of `self` and `b`.
     @inlinable
     func unpackLow64(b: Self) -> Self {
-        return Self(self: _mm_unpacklo_epi64(self, b))
+        return _mm_unpacklo_epi64(self, b)
     }
 }
 

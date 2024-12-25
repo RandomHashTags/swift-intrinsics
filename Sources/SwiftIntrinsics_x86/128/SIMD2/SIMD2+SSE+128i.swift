@@ -5,6 +5,8 @@
 //  Created by Evan Anderson on 12/19/24.
 //
 
-#if arch(x86_64) && canImport(_Builtin_intrinsics.intel) && SSE
+#if canImport(_Builtin_intrinsics.intel.sse) && SSE
+
+@_exported import _Builtin_intrinsics.intel.sse
 
 #endif
