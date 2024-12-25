@@ -10,17 +10,12 @@ let package = Package(
             name: "SwiftIntrinsics",
             targets: ["SwiftIntrinsics"]
         ),
-        .plugin(
-            name: "SwiftIntrinsicsPlugin",
-            targets: ["SwiftIntrinsicsPlugin"]
+        .library(
+            name: "SwiftIntrinsics_x86",
+            targets: ["SwiftIntrinsics_x86"]
         )
     ],
     targets: [
-        .plugin(
-            name: "SwiftIntrinsicsPlugin",
-            capability: .buildTool()
-        ),
-        
         .target(
             name: "SwiftIntrinsics",
             path: "Sources/swift-intrinsics"

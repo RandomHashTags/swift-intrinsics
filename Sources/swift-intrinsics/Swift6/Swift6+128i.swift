@@ -42,6 +42,7 @@ public extension SIMD2 where Scalar == Int64 {
         left = left >> bits
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD2 where Scalar == UInt64 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -111,6 +112,7 @@ public extension SIMD4 where Scalar == Int32 {
         left = left >> bits
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD4 where Scalar == UInt32 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -180,6 +182,7 @@ public extension SIMD8 where Scalar == Int16 {
         left = left >> bits
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD8 where Scalar == UInt16 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -249,6 +252,7 @@ public extension SIMD16 where Scalar == Int8 {
         left = left >> bits
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD16 where Scalar == UInt8 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable

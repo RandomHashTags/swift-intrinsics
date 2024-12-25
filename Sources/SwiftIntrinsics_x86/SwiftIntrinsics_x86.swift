@@ -7,6 +7,7 @@
 
 #if canImport(_Builtin_intrinsics.intel)
 
+@_exported import _Builtin_intrinsics.intel
 @_exported import SwiftIntrinsics
 
 #endif
