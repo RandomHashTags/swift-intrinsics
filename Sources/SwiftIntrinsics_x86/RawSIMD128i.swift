@@ -7,8 +7,6 @@
 
 #if canImport(_Builtin_intrinsics.intel)
 
-@_exported import _Builtin_intrinsics.intel
-
 // MARK: Carry-less Multiplication
 /*
 public extension SIMD2 where Scalar == Int64 { // TODO: INSTRUCTION DOESN'T EXIST! WTF!

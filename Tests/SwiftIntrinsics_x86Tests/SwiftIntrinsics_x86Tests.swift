@@ -12,6 +12,7 @@ import SwiftIntrinsics_x86
 
 struct SwiftIntrinsics_x86Tests {
     @Test func x86_128i_bitshift() {
+        guard #available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *) else { return }
         let huge:UInt128 = 18446744073709551615
         #expect(String(huge, radix: 2) == "1111111111111111111111111111111111111111111111111111111111111111")
 

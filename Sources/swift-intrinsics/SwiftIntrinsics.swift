@@ -5,11 +5,13 @@
 //  Created by Evan Anderson on 12/17/24.
 //
 
-#if arch(x86_64) && canImport(_Builtin_intrinsics.intel)
+#if canImport(_Builtin_intrinsics.intel)
 @_exported import _Builtin_intrinsics.intel
 #endif
 
 #if compiler(>=6.0)
+
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension UInt128 {
     init(_ raw: SIMD2<Int64>) {
         self = withUnsafePointer(to: raw, { $0.withMemoryRebound(to: UInt128.self, capacity: 1, { $0.pointee })})

@@ -8,6 +8,7 @@
 #if compiler(>=6.0)
 
 // MARK: Shift SIMD2
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD2 where Scalar == Int64 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -74,7 +75,9 @@ public extension SIMD2 where Scalar == UInt64 {
         left = left >> bits
     }
 }
+
 // MARK: Shift SIMD4
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD4 where Scalar == Int32 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -141,7 +144,9 @@ public extension SIMD4 where Scalar == UInt32 {
         left = left >> bits
     }
 }
+
 // MARK: Shift SIMD8
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD8 where Scalar == Int16 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -208,7 +213,9 @@ public extension SIMD8 where Scalar == UInt16 {
         left = left >> bits
     }
 }
+
 // MARK: Shift SIMD16
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD16 where Scalar == Int8 {
     /// Shift left by a number of bits while shifting in zeros.
     @inlinable
@@ -277,6 +284,7 @@ public extension SIMD16 where Scalar == UInt8 {
 }
 
 // MARK: Init SIMD2
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD2 where Scalar == Int64 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -285,6 +293,7 @@ public extension SIMD2 where Scalar == Int64 {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD2 where Scalar == UInt64 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -294,6 +303,7 @@ public extension SIMD2 where Scalar == UInt64 {
     }
 }
 // MARK: Init SIMD4
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD4 where Scalar == Int32 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -302,6 +312,7 @@ public extension SIMD4 where Scalar == Int32 {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD4 where Scalar == UInt32 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -311,6 +322,7 @@ public extension SIMD4 where Scalar == UInt32 {
     }
 }
 // MARK: Init SIMD8
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD8 where Scalar == Int16 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -319,6 +331,7 @@ public extension SIMD8 where Scalar == Int16 {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD8 where Scalar == UInt16 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -328,6 +341,7 @@ public extension SIMD8 where Scalar == UInt16 {
     }
 }
 // MARK: Init SIMD16
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD16 where Scalar == Int8 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
@@ -336,6 +350,7 @@ public extension SIMD16 where Scalar == Int8 {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
     }
 }
+@available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
 public extension SIMD16 where Scalar == UInt8 {
     init(_ storage: Int128) {
         self = withUnsafePointer(to: storage, { $0.withMemoryRebound(to: Self.self, capacity: 1, { $0.pointee })})
