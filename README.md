@@ -8,6 +8,9 @@ Unlock SIMD intrinsics.
 
 - [Extensions](#extensions)
 - [Supported CPU flags](#supported-cpu-flags)
+  - [x86](#x86)
+  - [ARM](#arm)
+  - [RISC-V](#risc-v)
 - [How to define CPU flags](#how-to-define-cpu-flags)
   - [Examples](#examples)
 
@@ -17,11 +20,18 @@ This library adds extensions to the existing Swift `SIMD<N>` types that use the 
 
 Some additional extensions are added for convenience without needing to declare CPU flags, including:
 
-- Whole bit shift 128 bits (requires Swift 6)
+- Bit shift SIMD types
+- Integer initialization from SIMD
 
 ## Supported CPU flags
 
 Format: `CPU Flag (-Xcc -m<value> | -Xswiftc -D<value>)`
+
+### x86
+
+<details>
+
+<summary>x86 cpu flags</summary>
 
 - AES (aes | AES)
 - AVX (avx | AVX)
@@ -38,9 +48,19 @@ Format: `CPU Flag (-Xcc -m<value> | -Xswiftc -D<value>)`
 - SSE4.2 (sse4.2 | SSE4_2)
 - SSSE3 (ssse3 | SSSE3)
 
+</details>
+
+### ARM
+
+coming soon...
+
+### RISC-V
+
+coming soon...
+
 ## How to define CPU flags
 
-Both `-Xcc` and `-Xswiftc` are required to compile correctly. This is unavoidable with the current state of Swift.
+Both `-Xcc` and `-Xswiftc` are required to compile correctly. It is recommended to use a script with your defined flags for developing a project utilizing this library. This is unavoidable with the current state of Swift.
 
 - `swift <build | run | test> -Xcc -m<flag1> -Xswiftc -D<flag1> -Xcc -m<flag2> -Xswiftc -D<flag2> -Xcc -m<flagN> -Xswiftc -D<flagN>`
 
